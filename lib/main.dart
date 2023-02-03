@@ -153,9 +153,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height * 0.5;
+
     _counterClockwiseRotationController
       ..reset()
       ..forward.delayed(const Duration(seconds: 1));
+
     return Scaffold(
       backgroundColor: Colors.white30,
       body: SafeArea(
@@ -181,8 +184,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             clipper: const HalfCircleClipper(side: CircleSide.left),
                             child: Container(
                               color: const Color(0xff0057b7),
-                              height: 100,
-                              width: 100,
+                              height: height,
+                              width: height,
                             ),
                           ),
                         );
@@ -198,8 +201,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             clipper: const HalfCircleClipper(side: CircleSide.right),
                             child: Container(
                               color: const Color(0xffffd700),
-                              height: 100,
-                              width: 100,
+                              height: height,
+                              width: height,
                             ),
                           ),
                         );
